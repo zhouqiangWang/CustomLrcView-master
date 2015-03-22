@@ -135,7 +135,7 @@ public class LrcView extends View implements ILrcView{
 			mPaintForOtherLrc.setTextSize(SIZE_FOR_DEFAULT_TEXT);
 			float textWidth = mPaintForOtherLrc.measureText(DEFAULT_TEXT);
 			float textX = (getWidth()-textWidth)/2;
-			canvas.drawText(DEFAULT_TEXT, textX, getHeight()/2, mPaintForOtherLrc);
+            canvas.drawText(DEFAULT_TEXT, textX, getHeight()/2, mPaintForOtherLrc);
 			return;
 		}
 		if(mTotleDrawRow == 0){
@@ -157,7 +157,8 @@ public class LrcView extends View implements ILrcView{
 
 			if(i == mCurRow){//画高亮歌词
 				//因为有缩放效果，所有需要动态设置歌词的字体大小
-				float textSize = mCurSizeForOtherLrc + (mCurSizeForHightLightLrc - mCurSizeForOtherLrc)*mCurFraction;
+				float textSize = mCurSizeForOtherLrc +
+                        (mCurSizeForHightLightLrc - mCurSizeForOtherLrc)*mCurFraction;
 				mPaintForHighLightLrc.setTextSize(textSize);
 
 				String text = mLrcRows.get(i).getContent();//获取到高亮歌词
